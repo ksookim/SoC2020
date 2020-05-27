@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+    <style>
+         :root {
+            --col-dark: #F8734F;
+            --col-light: #FDD0C4;
+            --col-white: #f4f7f7;
+            --height-head: 60px;
+        }
+        
+        html {
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            margin: 0px 0px 0px 0px;
+            padding-top: calc(50px + var(--height-head));
+            background-color: var(--col-white);
+        }
+        
+        #GitHub {
+            position: fixed;
+            top: 0;
+            left: calc(-1 * var(--height-head));
+            width: var(--height-head);
+            margin-left: 100%;
+        }
+        
+        #head {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: var(--height-head);
+            background-color: var(--col-dark);
+            color: var(--col-light);
+            overflow: hidden;
+        }
+        
+        #head h1 {
+            font-size: calc(var(--height-head)*0.75);
+            line-height: var(--height-head);
+            margin: 0px;
+        }
+        
+        .container h3 {
+            position: relative;
+            padding-top: 1em;
+            padding-bottom: 0.2em;
+            border-bottom: 4px solid var(--col-light);
+        }
+        
+        .container h3::after {
+            position: absolute;
+            content: " ";
+            border-bottom: solid 4px var(--col-dark);
+            bottom: -4px;
+            width: 10%;
+            display: block;
+        }
+    </style>
+    <title>SoC</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul id="tabs" class="nav nav-tabs">
+        </ul>
+        <div id="panes" class="tab-content container">
+        </div>
+    </div>
+    <div id="head">
+    </div>
+    <div id="GitHub">
+        <a id="repogitory" href="#"><img src="github.png" width="50" style="padding:5px;opacity:.8;"></a>
+    </div>
+    <script defer>
+        fetch('README.md').then((response) => response.text()).then((text) => {
+            let tabLevel = 2;
+            let currentSection = null;
+            let contents = {};
+            const md = marked.lexer(text);
+            md.forEach((line) => {
+                if (line.type == "heading" && line.depth == 1) {
+                    document.title = line.text;
+                    currentSection = "head";
+                    return;
+                } else if (line.type == "heading" && line.depth == 2) {
+                    currentSection = line.text;
+                    return;
+                }
+                if (currentSection != null) {
+                    if (!(currentSection in contents)) {
+                        contents[currentSection] = "";
+                    }
+                    contents[currentSection] += line.raw;
+                }
+            });
+            let init = true;
+            for (let sect in contents) {
+                if (document.getElementById(sect) == null) {
+                    let paragraph = $('<div class="tab-pane' + (init ? " active" : "") + '" id="' + sect + '"></div>');
+                    paragraph.html(marked(contents[sect]));
+                    let title = $('<li class="nav-item"><a class="nav-link' + (init ? " active" : "") + '" data-toggle="tab" href="#' + sect + '">' + sect + '</a></li>');
+                    $('#panes').append(paragraph);
+                    $('#tabs').append(title);
+                    init = false;
+                } else if (sect == "GitHub") {
+                    document.getElementById("repogitory").href = contents[sect].trim()
+                } else {
+                    $('#' + sect).html("<h1>" + marked(contents[sect]) + "</h1>");
+                }
+            }
+        }).catch((error) => console.log(error));
+    </script>
+</body>
+
+</html>
