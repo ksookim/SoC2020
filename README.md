@@ -90,13 +90,17 @@ TBD
 ### 6月27日(土) クロージング (15:15 - 15:30)
 1. クロージング
 
-## 参加登録(受付中！)
+## 参加登録受付中！
 
 ### 参加登録オープンしました
 
 参加登録は連続して開催されるDBSJ総会およびSIGMOD日本支部講演会と同時に登録できます。ぜひとも、積極的なご参加をお願いします。
 
-[DBSJ総会、SoC2020、SIGMOD-J統合参加フォーム]()
+[DBSJ総会、SoC2020、SIGMOD-J統合参加フォーム](https://forms.office.com/Pages/ResponsePage.aspx?id=wzxoml8ryEqJjnWo1k9mO1mc3WYhrORHoJR61G5zUexUN1BTUE5BQlpDSFBHODJVTDFPQ0lMN1U5Mi4u)
+
+### 参加費
+
+[参加費について（電子情報通信学会のサイトに移動します）](https://www.ieice.org/ken/user/index.php?cmd=participation&tgs_regid=c4601d35bca67c727b2954ab2578be467422f5d13bb88b1b6c0430e93a943acb)
 
 ## 運営組織
 
