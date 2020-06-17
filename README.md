@@ -100,6 +100,8 @@ TBD
 
 ### 参加費
 
+SoC2020の聴講には電子情報通信学会規定の参加費が掛かります。支払いは、上記の参加登録とは別に、下記、電子情報通信学会のWebサイトおりオンライン決済をお願いします。
+
 [参加費について（電子情報通信学会のサイトに移動します）](https://www.ieice.org/ken/user/index.php?cmd=participation&tgs_regid=c4601d35bca67c727b2954ab2578be467422f5d13bb88b1b6c0430e93a943acb)
 
 ## 運営組織
