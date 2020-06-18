@@ -94,6 +94,8 @@ TBD
 
 ### 参加登録オープンしました
 
+* **参加登録締め切り：2020年6月24日24時00分**
+
 参加登録は連続して開催されるDBSJ総会およびSIGMOD日本支部講演会と同時に登録できます。ぜひとも、積極的なご参加をお願いします。
 
 [DBSJ総会、SoC2020、SIGMOD-J統合参加フォーム](https://forms.office.com/Pages/ResponsePage.aspx?id=wzxoml8ryEqJjnWo1k9mO1mc3WYhrORHoJR61G5zUexUN1BTUE5BQlpDSFBHODJVTDFPQ0lMN1U5Mi4u)
