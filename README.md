@@ -11,7 +11,7 @@ https://github.com/Social-Computing-Symposium/SoC2020
 ### イベント詳細
 
 * **名称：** 第11回ソーシャルコンピューティングシンポジウム／The 11th Social Computing Symposium (SoC 2020)
-* **日時：** 2019年6月27日（土）
+* **日時：** 20年6月27日（土）
 * **場所：** オンライン開催
 * **主催：**
     * 日本データベース学会 (DBSJ)
